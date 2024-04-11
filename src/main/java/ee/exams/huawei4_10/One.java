@@ -46,8 +46,18 @@ public class One {
             Integer total = time == 0 ? 0 : time * factor.getOrDefault(record[2], 0);
             result.put(record[1], result.getOrDefault(record[1], 0) + total);
         }
-        System.out.println(result.toString());
-        /*
+        //System.out.println(result.toString());
+
+
+        // please define the JAVA output here. For example: System.out.println(s.nextInt());
+        Iterator<Map.Entry<String, Integer>> iterator = result.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Integer> next = iterator.next();
+            System.out.println(next.getKey() + "," + next.getValue());
+        }
+
+    /* 测试数据
+无重复记录
 5
 1627845600,client1,factorA,10
 1627845605,client2,factorB,15
@@ -58,10 +68,66 @@ public class One {
 factorA,5
 factorB,6
 
-         */
 
-        // please define the JAVA output here. For example: System.out.println(s.nextInt());
-        System.out.println();
+存在重复记录
+7
+1627845600,client1,factorA,10
+1627845605,client2,factorB,15
+1627845610,client1,factorA,5
+1627845610,client1,factorB,8
+1627845600,client1,factorA,5
+1627845605,client2,factorB,50
+1627845620,client2,factorB,20
+2
+factorA,5
+factorB,6
 
+计费时长超出范围
+5
+1627845600,client1,factorA,101
+1627845605,client2,factorB,15
+1627845610,client1,factorA,5
+1627845610,client1,factorB,8
+1627845620,client2,factorB,20
+2
+factorA,5
+factorB,6
+
+计费时长超出范围，同时下面有相同记录
+6
+1627845600,client1,factorA,101
+1627845605,client2,factorB,15
+1627845610,client1,factorA,5
+1627845600,client1,factorA,10
+1627845610,client1,factorB,8
+1627845620,client2,factorB,20
+2
+factorA,5
+factorB,6
+
+不存在计费因子
+6
+1627845605,client2,factorB,15
+1627845610,client1,factorA,5
+1627845600,client1,factorA,10
+1627845610,client1,factorB,8
+1627845620,client2,factorB,20
+1627845605,client2,factorC,15
+2
+factorA,5
+factorB,6
+
+多个用户
+6
+1627845605,client2,factorB,15
+1627845610,client1,factorA,5
+1627845600,client1,factorA,10
+1627845610,client1,factorB,8
+1627845620,client2,factorB,20
+1627845605,client3,factorC,15
+2
+factorA,5
+factorB,6
+ */
     }
 }
