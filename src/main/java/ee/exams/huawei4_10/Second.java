@@ -7,6 +7,24 @@ import java.util.*;
  * @version 1.0
  */
 public class Second {
+/* 测试数据
+
+5
+0 0 50 0 0
+0 0 0 25 0
+50 0 0 0 15
+0 25 0 0 0
+0 0 15 0 0
+
+6
+0 20 0 30 0 0
+20 0 0 0 0 0
+0 0 0 60 0 0
+30 0 60 0 0 0
+0 0 0 0 0 20
+0 0 0 0 20 0
+         */
+
     private static int[] father;
     private static void init() {
         for (int i = 0; i < father.length; i++) {
@@ -72,28 +90,11 @@ public class Second {
         list.sort((a,b)->{
             return b.compareTo(a);
         });
+
+        // please define the JAVA output here. For example: System.out.println(s.nextInt());
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i));
             if (i != list.size() - 1) System.out.print(" ");
         }
-        /*
-5
-0 0 50 0 0
-0 0 0 25 0
-50 0 0 0 15
-0 25 0 0 0
-0 0 15 0 0
-
-6
-0 20 0 30 0 0
-20 0 0 0 0 0
-0 0 0 60 0 0
-30 0 60 0 0 0
-0 0 0 0 0 20
-0 0 0 0 20 0
-         */
-
-        // please define the JAVA output here. For example: System.out.println(s.nextInt());
-
     }
 }
