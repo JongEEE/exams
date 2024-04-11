@@ -6,7 +6,7 @@ import java.util.*;
  * @author Joey
  * @version 1.0
  */
-public class One {
+public class First {
     public static void main(String[] args) {
         // please define the JAVA input here. For example: Scanner s = new Scanner(System.in);
         Scanner in = new Scanner(System.in);
